@@ -34,7 +34,7 @@ test('user_trait append marks (추정) in USER.md', () => {
     propose(env, { type: 'append', agent: 'main', key: 'numbers-first', kind: 'user_trait', reason: 'r', file: 'USER.md', line: '숫자 근거부터 확인하신다' });
     message(env);
     assert.equal(apply(env, ['--number', '1']).status, 0);
-    assert.match(fs.readFileSync(path.join(env.main, 'USER.md'), 'utf8'), /## 성장 노트 — 주인에 대해 \(추정 포함\)\n- \(추정\) 숫자 근거부터 확인하신다 \(2026-11-02 승인\)/);
+    assert.match(fs.readFileSync(path.join(env.main, 'USER.md'), 'utf8'), /## 성장 노트 — 대표님에 대해 \(추정 포함\)\n- \(추정\) 숫자 근거부터 확인하신다 \(2026-11-02 승인\)/);
   } finally { env.cleanup(); }
 });
 

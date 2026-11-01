@@ -48,7 +48,7 @@ export function weekStats(workspace, team, now) {
 
 const md = iso => `${Number(iso.slice(5, 7))}/${Number(iso.slice(8, 10))}`;
 const ORDER = ['correction', 'failure', 'better_way', 'repeat_task', 'user_trait', 'wish'];
-const SHORT = { ...Object.fromEntries(Object.entries(KINDS).map(([k, v]) => [k, v.ko])), user_trait: '주인 성향' };
+const SHORT = { ...Object.fromEntries(Object.entries(KINDS).map(([k, v]) => [k, v.ko])), user_trait: '대표님 성향' };
 
 export function renderWeekly(s) {
   const head = `🌱 성장 노트 — 이번 주 성장 리포트 (${md(s.week.from)}~${md(s.week.to)})`;

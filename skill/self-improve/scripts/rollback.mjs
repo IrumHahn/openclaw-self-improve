@@ -57,7 +57,7 @@ runMain(() => {
           const wanted = entry.files ?? [];
           if (fileSha(skillFile) !== entry.skillSha || JSON.stringify(files) !== JSON.stringify(wanted)) {
             const currentText = fs.existsSync(skillFile) ? fs.readFileSync(skillFile, 'utf8') : '';
-            conflict('반영한 뒤에 이 스킬이 또 바뀌었어요. 그래도 되돌리면 그 뒤에 바뀐 내용은 보관 폴더로 옮겨져요. 주인에게 확인받은 뒤 --force 로 다시 실행하세요.', {
+            conflict('반영한 뒤에 이 스킬이 또 바뀌었어요. 그래도 되돌리면 그 뒤에 바뀐 내용은 보관 폴더로 옮겨져요. 대표님에게 확인받은 뒤 --force 로 다시 실행하세요.', {
               ...lineDiff(p.skillMd, currentText),
               addedFiles: files.filter(f => !wanted.includes(f)),
               removedFiles: wanted.filter(f => !files.includes(f)),
@@ -77,7 +77,7 @@ runMain(() => {
         const appliedFile = find('applied');
         if (!appliedFile) fail(NO_BACKUP);
         const currentText = current === 'absent' ? '' : fs.readFileSync(abs, 'utf8');
-        conflict('반영한 뒤에 이 파일이 또 바뀌었어요. 그래도 되돌리면 그 뒤에 바뀐 내용이 사라져요. 주인에게 확인받은 뒤 --force 로 다시 실행하세요.', lineDiff(fs.readFileSync(appliedFile, 'utf8'), currentText));
+        conflict('반영한 뒤에 이 파일이 또 바뀌었어요. 그래도 되돌리면 그 뒤에 바뀐 내용이 사라져요. 대표님에게 확인받은 뒤 --force 로 다시 실행하세요.', lineDiff(fs.readFileSync(appliedFile, 'utf8'), currentText));
         return;
       }
       const original = entry.backup ? find('original') : null;

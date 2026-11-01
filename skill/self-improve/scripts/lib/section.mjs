@@ -30,7 +30,7 @@ export function markersIntact(before, after) {
 }
 
 export function titleFor(rel) {
-  return rel === 'USER.md' ? '## 성장 노트 — 주인에 대해 (추정 포함)' : '## 성장 노트 — 배운 규칙';
+  return rel === 'USER.md' ? '## 성장 노트 — 대표님에 대해 (추정 포함)' : '## 성장 노트 — 배운 규칙';
 }
 
 export function findSection(text) {

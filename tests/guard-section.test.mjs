@@ -24,7 +24,7 @@ test('appendRule creates the marked section once, appends inside it, enforces 30
   assert.equal(text, '# 내 규칙\n수강생이 쓴 문장\n\n<!-- self-improve:start -->\n## 성장 노트 — 배운 규칙\n- 보고는 3줄 요약부터\n<!-- self-improve:end -->\n');
   text = appendRule(text, 'AGENTS.md', '숫자는 표로');
   assert.deepEqual(sectionRules(text), ['- 보고는 3줄 요약부터', '- 숫자는 표로']);
-  assert.match(appendRule('', 'USER.md', '(추정) 숫자부터'), /## 성장 노트 — 주인에 대해 \(추정 포함\)/);
+  assert.match(appendRule('', 'USER.md', '(추정) 숫자부터'), /## 성장 노트 — 대표님에 대해 \(추정 포함\)/);
   let full = '';
   for (let i = 0; i < MAX_LINES; i++) full = appendRule(full, 'AGENTS.md', `규칙 ${i}`);
   assert.throws(() => appendRule(full, 'AGENTS.md', '하나 더'), /가득/);

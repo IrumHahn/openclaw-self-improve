@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 주인이 승인한 제안을 반영한다. 허용 파일 · 정확히 1회 일치 · (바꿔치기는) 제안 뒤 변경 없음(sha)을 확인하고, 백업 후 원자적으로 쓴다.
+// 대표님이 승인한 제안을 반영한다. 허용 파일 · 정확히 1회 일치 · (바꿔치기는) 제안 뒤 변경 없음(sha)을 확인하고, 백업 후 원자적으로 쓴다.
 import fs from 'node:fs';
 import path from 'node:path';
 import { parseArgs, requireAbs } from './lib/args.mjs';

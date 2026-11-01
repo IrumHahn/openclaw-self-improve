@@ -27,14 +27,14 @@ test('redact hides tokens, emails, phones, cards, password values', () => {
 test('note appends one validated line with KST ts and reports redaction', () => {
   const env = setup();
   try {
-    const out = note(env.researcher, 'researcher', 'correction', 'report-3line-summary', '보고는 3줄 요약부터 시작한다', 'AGENTS.md', T0, ['--evidence', '주인 메일 hong@example.com 에서']);
+    const out = note(env.researcher, 'researcher', 'correction', 'report-3line-summary', '보고는 3줄 요약부터 시작한다', 'AGENTS.md', T0, ['--evidence', '대표님 메일 hong@example.com 에서']);
     assert.equal(out.saved, true);
     assert.equal(out.redacted, true);
     const lines = fs.readFileSync(path.join(env.researcher, 'learnings', 'notes.jsonl'), 'utf8').trim().split('\n').map(JSON.parse);
     assert.equal(lines.length, 1);
     assert.equal(lines[0].id, out.id);
     assert.equal(lines[0].ts, '2026-11-02T10:00:00+09:00');
-    assert.equal(lines[0].evidence, '주인 메일 [가림] 에서');
+    assert.equal(lines[0].evidence, '대표님 메일 [가림] 에서');
     assert.equal(lines[0].kind, 'correction');
   } finally { env.cleanup(); }
 });

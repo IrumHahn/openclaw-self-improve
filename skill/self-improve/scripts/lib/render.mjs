@@ -7,7 +7,7 @@ const MARKER_LINES = new Set([START, END, HOOK_START, HOOK_END]);
 export function stripMarkers(text) {
   return String(text).split('\n').filter(line => !MARKER_LINES.has(line.trim())).join('\n');
 }
-const FILE_LABEL = { 'AGENTS.md': '업무 규칙', 'TOOLS.md': '도구 메모', 'SOUL.md': '성격·말투', 'USER.md': '주인에 대해' };
+const FILE_LABEL = { 'AGENTS.md': '업무 규칙', 'TOOLS.md': '도구 메모', 'SOUL.md': '성격·말투', 'USER.md': '대표님에 대해' };
 
 export function whoLabel(p) { return p.agentIsMain ? '총괄' : `팀원 '${p.agent}'`; }
 

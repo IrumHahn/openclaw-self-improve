@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 주인이 거절한 제안을 닫고, 같은 열쇠(key)를 14일 동안 다시 제안하지 않게 한다.
+// 대표님이 거절한 제안을 닫고, 같은 열쇠(key)를 14일 동안 다시 제안하지 않게 한다.
 import { parseArgs, requireAbs } from './lib/args.mjs';
 import { withLock } from './lib/lock.mjs';
 import { COOLDOWN_DAYS, learningsPaths, loadProposal, readState, saveProposal, writeState } from './lib/state.mjs';

@@ -5,7 +5,7 @@ export const KINDS = {
   correction: { ko: '교정', threshold: 1, priority: 0 },
   failure: { ko: '실패', threshold: 2, priority: 1 },
   better_way: { ko: '더 나은 방법', threshold: 2, priority: 1 },
-  user_trait: { ko: '주인 성향(추정)', threshold: 3, priority: 2 },
+  user_trait: { ko: '대표님 성향(추정)', threshold: 3, priority: 2 },
   repeat_task: { ko: '반복 작업', threshold: 3, priority: 3 },
   wish: { ko: '바라는 기능', threshold: null, priority: 9 },
 };
