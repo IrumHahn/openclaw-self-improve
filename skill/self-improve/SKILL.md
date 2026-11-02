@@ -144,7 +144,7 @@ openclaw cron add --name self-improve-weekly --agent main --cron "0 22 * * 0" --
   --channel telegram --to <대표님 텔레그램 chatId> --announce \
   --message "self-improve 스킬 4절(성장 노트 주간 정리)을 실행해."
 ```
-   - `--agent` 는 총괄 id(보통 `main`). `--to` 가 없으면 `--channel last`(마지막 대화 채널)로 간다.
+   - `--agent` 는 총괄 id(보통 `main`). `--channel last` 는 쓰지 않는다. 텔레그램과 디스코드가 둘 다 연결돼 있으면 등록이 거부된다. chatId 를 모르면 대표님께 텔레그램으로 말을 걸어 달라고 하고 확인한다.
 3) `openclaw cron list` 로 두 개가 등록됐는지 확인하고, 대표님에게 **두 시각과 채널 이름**을 보여 준다.
 4) 팀원 AGENTS.md 에 메모 규칙이 들어갔는지 모르면 대표님에게 설치 안내의 `install_hook.mjs --all-agents` 줄을 실행했는지 물어본다. 내가 AGENTS.md 를 직접 고치지 않는다.
 
